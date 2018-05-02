@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Base Game Event Sheet</name>
+    <events>
+        <variable constant="0" name="computer_note" sid="360461274931609" static="0" type="number">0</variable>
+        <variable constant="0" name="player_note" sid="226603007790975" static="0" type="number">0</variable>
+        <variable comment="Boolean for whether player has completed level 6" constant="0" name="hardmode" sid="577104324668886" static="0" type="number">0</variable>
+        <variable constant="0" name="total_score" sid="330434979553272" static="0" type="number">0</variable>
+        <variable comment="Player Round Score" constant="0" name="round_score" sid="919641865349231" static="0" type="number">0</variable>
+        <variable constant="0" name="timer" sid="395167762923225" static="0" type="number">60</variable>
+        <comment>Increase the difficulty if player has reached level 6</comment>
+        <event-block sid="138901706946091">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="518686941993588" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="487070929707546" type="System">
+                    <param id="0" name="Variable">music_track</param>
+                    <param id="1" name="Value">round(random(1,31))</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="245375835054221" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="940769727405315">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="630602679072542" type="System">
+                            <param id="0" name="Variable">hardmode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="445079869859871" type="Notehead">
+                            <param id="0" name="Speed">700</param>
+                        </action>
+                        <action behavior="8Direction" id="4" name="Set max speed" sid="933229685431126" type="Computer">
+                            <param id="0" name="Max Speed">1200</param>
+                        </action>
+                        <action behavior="8Direction" id="5" name="Set acceleration" sid="132278950881006" type="Computer">
+                            <param id="0" name="Acceleration">1000</param>
+                        </action>
+                        <action behavior="8Direction" id="6" name="Set deceleration" sid="738040580749310" type="Computer">
+                            <param id="0" name="Deceleration">800</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="497564947061203">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="103316163153787" type="Notehead">
+                    <param id="0" name="Object">Computer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set effect parameter" sid="333207897518596" type="Player">
+                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                    <param id="1" name="Parameter index">1</param>
+                    <param id="2" name="Value">0</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="583378878053604" type="PlayerBarrier">
+                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                    <param id="1" name="Parameter index">1</param>
+                    <param id="2" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="757331045284431" title="Computer Movement">
+            <sub-events>
+                <event-block sid="562034371601209">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="420269417155322" type="Computer">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">Notehead.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="722959154565643" type="Computer">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="846322484652902">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="320300764855014" type="Computer">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">Notehead.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="211367780777703" type="Computer">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="599200904179661">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="691255923804787" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="752341529679351" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="297082663400923" type="Timer">
+                    <param id="0" name="Text">timer</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>When Time Runs Out: Display Score. Reset All Global Variables except total_score.</comment>
+                <event-block sid="662923141806005">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="644345515293764" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="615162681016684" type="System">
+                            <param id="0" name="Variable">total_score</param>
+                            <param id="1" name="Value">round_score</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="288131236686893" type="Notehead" />
+                        <action id="-15" name="Set visible" sid="506037149279065" type="Timer">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="367921642387732" type="Score">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="787908697562943" type="LevelReport">
+                            <param id="0" name="Text">&quot;Round Over.&quot; &amp; newline &amp; &quot;Great Listening!&quot; &amp; newline &amp; &quot;You Scored&quot; &amp; newline &amp; round_score &amp; newline &amp; newline &amp; newline &amp; &quot;Total Score&quot; &amp; newline &amp; total_score</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="223648598507666" type="LevelReport">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="398797065084101" type="System">
+                            <param id="0" name="Variable">computer_note</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="832634516616299" type="System">
+                            <param id="0" name="Variable">player_note</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="840914487568407" type="System">
+                            <param id="0" name="Variable">root</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="658249249770241" type="System">
+                            <param id="0" name="Variable">third</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="641889523733686" type="System">
+                            <param id="0" name="Variable">fifth</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="435199836954891" type="System">
+                            <param id="0" name="Variable">round_score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="414251274209024" type="Audio">
+                            <param id="0" name="Folder">1</param>
+                            <param id="1" name="Audio file name">str(music_track)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;endmusic&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="156889381948385">
+            <conditions>
+                <condition id="0" name="On ended" sid="406032204297468" type="Audio">
+                    <param id="0" name="Tag">&quot;endmusic&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Play the first 6 levels again with a faster notehead.</comment>
+                <event-block sid="951577583782773">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="586296163334744" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;Level 6&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="452888964970775" type="System">
+                            <param id="0" name="Variable">hardmode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="551963580725293" type="System">
+                            <param id="0" name="Variable">hardmode</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="955317524348495" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Value">60</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="807267032996899" type="System">
+                            <param id="0" name="Layout">Level 1 Training</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="839739309234337">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="452442752880251" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="361312411928214" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Value">60</param>
+                        </action>
+                        <action id="-43" name="Go to next/previous layout" sid="227915333236801" type="System">
+                            <param id="0" name="Which">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

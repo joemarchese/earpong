@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 1 Training Events</name>
+    <events>
+        <event-block sid="126932194585014">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="800208016483058" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="948918662768991" type="Notehead" />
+                <action id="0" name="Set text" sid="339756434917474" type="LevelReport">
+                    <param id="0" name="Text">&quot;Listen!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="551464271297262" type="LevelReport">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="499698858429161" type="System">
+                    <param id="0" name="Variable">computer_note</param>
+                    <param id="1" name="Value">round(random(36,48))</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="929228997382411" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(computer_note)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="985625486750340" type="System">
+                    <param id="0" name="Variable">player_note</param>
+                    <param id="1" name="Value">computer_note + round(random(1,6))</param>
+                </action>
+                <action id="-16" name="Wait" sid="496850783146140" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="646655566734562" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(player_note)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="515497955439455" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="919062699785813" type="System">
+                    <param id="0" name="Variable">computer_note</param>
+                    <param id="1" name="Value">round(random(36,48))</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="663936457372835" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(computer_note)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="750836131914336" type="System">
+                    <param id="0" name="Variable">player_note</param>
+                    <param id="1" name="Value">computer_note + round(random(1,6))</param>
+                </action>
+                <action id="-16" name="Wait" sid="855539548710058" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="590973458169278" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(player_note)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="371943875305506" type="System">
+                    <param id="0" name="Variable">computer_note</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="193813885277334" type="System">
+                    <param id="0" name="Variable">player_note</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="408869954483261" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-43" name="Go to next/previous layout" sid="939131171728816" type="System">
+                    <param id="0" name="Which">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

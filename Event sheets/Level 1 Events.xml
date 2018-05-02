@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 1 Events</name>
+    <events>
+        <include>Base Game Event Sheet</include>
+        <event-block sid="662951829455826">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="778257576229056" type="Notehead">
+                    <param id="0" name="Object">Computer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="420293720975685" type="System">
+                    <param id="0" name="Variable">computer_note</param>
+                    <param id="1" name="Value">round(random(36,48))</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="109806943470892" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(computer_note)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="350662037634942">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="747989364306566" type="Notehead">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="667938923081045">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="466684996664937" type="System">
+                            <param id="0" name="Variable">player_note</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="742305531831774" type="System">
+                            <param id="0" name="Variable">player_note</param>
+                            <param id="1" name="Value">round(random(36,48))</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="768957006992834" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">str(player_note)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="238169249679213">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="740849606551824" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="744225844995824">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="620874873853923" type="System">
+                                    <param id="0" name="Variable">computer_note</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="483591069868025">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="615353584471296" type="System">
+                                            <param id="0" name="First value">player_note</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">computer_note</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="525910429993848" type="System">
+                                            <param id="0" name="Variable">round_score</param>
+                                            <param id="1" name="Value">25</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="582245489561054" type="Score">
+                                            <param id="0" name="Text">&quot;Score: &quot;&amp;round_score</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="236323505993582" type="Player">
+                                            <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">70</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="781912414206202" type="System">
+                                            <param id="0" name="Variable">player_note</param>
+                                            <param id="1" name="Value">round(random(36,48))</param>
+                                        </action>
+                                        <action id="7" name="Play (by name)" sid="284978633352332" type="Audio">
+                                            <param id="0" name="Folder">0</param>
+                                            <param id="1" name="Audio file name">str(player_note)</param>
+                                            <param id="3" name="Loop">0</param>
+                                            <param id="4" name="Volume">0</param>
+                                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="138425968039155">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="960580748401052" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="773116208742703" type="System">
+                                            <param id="0" name="Variable">player_note</param>
+                                            <param id="1" name="Value">round(random(36,48))</param>
+                                        </action>
+                                        <action id="7" name="Play (by name)" sid="775610895085109" type="Audio">
+                                            <param id="0" name="Folder">0</param>
+                                            <param id="1" name="Audio file name">str(player_note)</param>
+                                            <param id="3" name="Loop">0</param>
+                                            <param id="4" name="Volume">0</param>
+                                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="277654875890595">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="231364313167567" type="Notehead">
+                    <param id="0" name="Object">PlayerBarrier</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="926216737404429">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="676158108745766" type="System">
+                            <param id="0" name="Variable">player_note</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="211980343752874" type="System">
+                            <param id="0" name="Variable">player_note</param>
+                            <param id="1" name="Value">round(random(36,48))</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="620877702690587" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">str(player_note)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="383376299581169">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="628769473079296" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="918616660550667">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="284864141388954" type="System">
+                                    <param id="0" name="Variable">computer_note</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="521903359206566">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="282772467263263" type="System">
+                                            <param id="0" name="First value">player_note</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">computer_note</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="140261201173498" type="System">
+                                            <param id="0" name="Variable">player_note</param>
+                                            <param id="1" name="Value">round(random(36,48))</param>
+                                        </action>
+                                        <action id="7" name="Play (by name)" sid="143321157903808" type="Audio">
+                                            <param id="0" name="Folder">0</param>
+                                            <param id="1" name="Audio file name">str(player_note)</param>
+                                            <param id="3" name="Loop">0</param>
+                                            <param id="4" name="Volume">0</param>
+                                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="445002744490465">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="110401912714677" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="669758152054139" type="System">
+                                            <param id="0" name="Variable">round_score</param>
+                                            <param id="1" name="Value">25</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="358946965581719" type="Score">
+                                            <param id="0" name="Text">&quot;Score: &quot;&amp;round_score</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="622288638679482" type="PlayerBarrier">
+                                            <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                            <param id="1" name="Parameter index">1</param>
+                                            <param id="2" name="Value">70</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="148403151774607" type="System">
+                                            <param id="0" name="Variable">player_note</param>
+                                            <param id="1" name="Value">round(random(36,48))</param>
+                                        </action>
+                                        <action id="7" name="Play (by name)" sid="185877885854748" type="Audio">
+                                            <param id="0" name="Folder">0</param>
+                                            <param id="1" name="Audio file name">str(player_note)</param>
+                                            <param id="3" name="Loop">0</param>
+                                            <param id="4" name="Volume">0</param>
+                                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Ear Pong</name>
+    <description>A Pong Ear Training Game</description>
+    <version>1.0.0.0</version>
+    <author>Joseph Marchese</author>
+    <author-email>joeymarchese@gmail.com</author-email>
+    <author-website>https://github.com/joemarchese</author-website>
+    <app-id></app-id>
+    <unique-id>268649di07135</unique-id>
+    <saved-with-version>25500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="setcolor">Set color</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1280</width>
+        <height>720</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Player" sid="366098736081656">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="peerid" sid="383666951365715" type="string" />
+                <instance-variable name="points" sid="348959129161686" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="540446713444493">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="292000252992323">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="397144096114253">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="SetColor">
+                    <effect id="setcolor" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="490851328649084" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="1.04" y="0.513333" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Notehead" sid="594225301856756">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="487335829206074">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="163105846204433" speed="5">
+                    <frame duration="1" hotspotX="0.490909" hotspotY="0.478571" original-source="C:\Users\jmm78\Desktop\notehead.png">
+                        <collision-poly>
+                            <point x="0.247107" y="0.0586574" />
+                            <point x="0.530716" y="0" />
+                            <point x="0.930165" y="0.165801" />
+                            <point x="1" y="0.502092" />
+                            <point x="0.893802" y="0.841342" />
+                            <point x="0.541597" y="1" />
+                            <point x="0.288017" y="0.948485" />
+                            <point x="0" y="0.52352" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Barrier" sid="151528628640395">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="975259610715302">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="Audio" sid="622392053542881">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Computer" sid="400391935273871">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="579802715302236">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="709358557568102">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="427581104887252">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="290597470871606" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Timer" sid="951235715133847">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Score" sid="799206279421420">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PlayerBarrier" sid="841854773327321">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="438793723206980">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="SetColor">
+                    <effect id="setcolor" />
+                </effect-type>
+            </effects>
+            <texture />
+        </object-type>
+        <object-type name="LevelReport" sid="591945823031571">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="GrandStaffBackground" sid="931475327376433">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\jmm78\Desktop\grandstaff.png" />
+        </object-type>
+        <object-type name="Condition" sid="115573511024574">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="RuleReminderText" sid="300551249506359">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite" sid="138733262785013">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="348565218248309" speed="5">
+                    <frame duration="1" hotspotX="0.434426" hotspotY="0.466077" original-source="C:\Users\jmm78\Desktop\1D11E-500x500.png">
+                        <collision-poly>
+                            <point x="0.221311" y="0.389381" />
+                            <point x="0.434426" y="0.0678466" />
+                            <point x="0.54918" y="0.424779" />
+                            <point x="0.57377" y="0.466077" />
+                            <point x="0.97541" y="0.660767" />
+                            <point x="0.434426" y="0.9941" />
+                            <point x="0.0245902" y="0.613569" />
+                            <point x="0.0737705" y="0.466077" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EndingText" sid="199825865896471">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Introduction.xml</layout>
+        <layout>Level 1 Training.xml</layout>
+        <layout>Level 1.xml</layout>
+        <layout>Level 2 Training.xml</layout>
+        <layout>Level 2.xml</layout>
+        <layout>Level 3 Training.xml</layout>
+        <layout>Level 3.xml</layout>
+        <layout>Level 4 Training.xml</layout>
+        <layout>Level 4.xml</layout>
+        <layout>Level 5 Training.xml</layout>
+        <layout>Level 5.xml</layout>
+        <layout>Level 6 Training.xml</layout>
+        <layout>Level 6.xml</layout>
+        <layout>Ending.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Level 1 Events.xml</event-sheet>
+        <event-sheet>Base Game Event Sheet.xml</event-sheet>
+        <event-sheet>Level 2 Events.xml</event-sheet>
+        <event-sheet>Triad Events.xml</event-sheet>
+        <event-sheet>Level 4 Events.xml</event-sheet>
+        <event-sheet>Level 3 Events.xml</event-sheet>
+        <event-sheet>Level 5 Events.xml</event-sheet>
+        <event-sheet>Level 6 Events.xml</event-sheet>
+        <event-sheet>Level 1 Training Events.xml</event-sheet>
+        <event-sheet>Level 2 Training Events.xml</event-sheet>
+        <event-sheet>Level 3 Training Events.xml</event-sheet>
+        <event-sheet>Level 4 Training Events.xml</event-sheet>
+        <event-sheet>Level 5 Training Events.xml</event-sheet>
+        <event-sheet>Level 6 Training Events.xml</event-sheet>
+        <event-sheet>Introduction.xml</event-sheet>
+        <event-sheet>Ending.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Audio" uid="7">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="32.ogg" />
+        <file name="33.ogg" />
+        <file name="34.ogg" />
+        <file name="35.ogg" />
+        <file name="36.ogg" />
+        <file name="37.ogg" />
+        <file name="38.ogg" />
+        <file name="39.ogg" />
+        <file name="40.ogg" />
+        <file name="41.ogg" />
+        <file name="42.ogg" />
+        <file name="43.ogg" />
+        <file name="44.ogg" />
+        <file name="45.ogg" />
+        <file name="46.ogg" />
+        <file name="47.ogg" />
+        <file name="48.ogg" />
+        <file name="49.ogg" />
+        <file name="50.ogg" />
+        <file name="51.ogg" />
+        <file name="52.ogg" />
+        <file name="53.ogg" />
+        <file name="54.ogg" />
+        <file name="55.ogg" />
+        <file name="56.ogg" />
+        <file name="57.ogg" />
+        <file name="58.ogg" />
+        <file name="59.ogg" />
+        <file name="60.ogg" />
+        <file name="61.ogg" />
+        <file name="62.ogg" />
+        <file name="63.ogg" />
+        <file name="64.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="1.ogg" />
+        <file name="10.ogg" />
+        <file name="11.ogg" />
+        <file name="12.ogg" />
+        <file name="13.ogg" />
+        <file name="14.ogg" />
+        <file name="15.ogg" />
+        <file name="16.ogg" />
+        <file name="17.ogg" />
+        <file name="18.ogg" />
+        <file name="19.ogg" />
+        <file name="2.ogg" />
+        <file name="20.ogg" />
+        <file name="21.ogg" />
+        <file name="22.ogg" />
+        <file name="23.ogg" />
+        <file name="24.ogg" />
+        <file name="25.ogg" />
+        <file name="26.ogg" />
+        <file name="27.ogg" />
+        <file name="28.ogg" />
+        <file name="29.ogg" />
+        <file name="3.ogg" />
+        <file name="30.ogg" />
+        <file name="31.ogg" />
+        <file name="4.ogg" />
+        <file name="5.ogg" />
+        <file name="6.ogg" />
+        <file name="7.ogg" />
+        <file name="8.ogg" />
+        <file name="9.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

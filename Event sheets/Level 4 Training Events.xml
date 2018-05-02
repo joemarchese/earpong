@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 4 Training Events</name>
+    <events>
+        <event-block sid="611770219874207">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="425535437869269" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="154988220290634" type="Notehead" />
+                <action id="0" name="Set text" sid="360003508510967" type="LevelReport">
+                    <param id="0" name="Text">&quot;Listen!&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="288559846090704" type="LevelReport">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="666802993678248" type="System">
+                    <param id="0" name="Variable">root</param>
+                    <param id="1" name="Value">round(random(36,48))</param>
+                </action>
+                <action id="-9" name="Set value" sid="371292007064028" type="System">
+                    <param id="0" name="Variable">third</param>
+                    <param id="1" name="Value">root + 3</param>
+                </action>
+                <action id="-9" name="Set value" sid="759693407158330" type="System">
+                    <param id="0" name="Variable">fifth</param>
+                    <param id="1" name="Value">root + 7</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="999498788101500" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(third)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="241921464137619" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(root)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="612838646792151" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(fifth)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="148291922890579" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="473355177868435" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(root)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="102503879800112" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="694350498068236" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(third)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="893954483175985" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="176104957555458" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(fifth)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="847463994418374" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="653601376293105" type="System">
+                    <param id="0" name="Variable">root</param>
+                    <param id="1" name="Value">round(random(36,48))</param>
+                </action>
+                <action id="-9" name="Set value" sid="725346814688057" type="System">
+                    <param id="0" name="Variable">third</param>
+                    <param id="1" name="Value">root + 3</param>
+                </action>
+                <action id="-9" name="Set value" sid="554077563411882" type="System">
+                    <param id="0" name="Variable">fifth</param>
+                    <param id="1" name="Value">root + 7</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="318387043298121" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(third)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="275920163716595" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(root)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="691809120902029" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(fifth)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="370733417238459" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="584876813529295" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(root)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="332104012436988" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="464996180644329" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(third)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="374867597017599" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="116969842102695" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">str(fifth)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="499488673777371" type="System">
+                    <param id="0" name="Variable">root</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="229964034587662" type="System">
+                    <param id="0" name="Variable">third</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="840646903209948" type="System">
+                    <param id="0" name="Variable">fifth</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="641419899753883" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="-43" name="Go to next/previous layout" sid="844190006746087" type="System">
+                    <param id="0" name="Which">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

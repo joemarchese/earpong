@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Ending</name>
+    <events>
+        <event-block sid="710142297088772">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="623059725766306" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="287970973171795" type="System">
+                    <param id="0" name="Variable">music_track</param>
+                    <param id="1" name="Value">round(random(1,31))</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="284484986616888" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                </action>
+                <action id="-16" name="Wait" sid="104428412928532" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="491515942428892" type="LevelReport">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="758571999888894" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;1&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="695164144043502" type="System">
+                    <param id="0" name="Variable">music_track</param>
+                    <param id="1" name="Value">round(random(1,31))</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="126660475673772" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="166154535359601">
+            <conditions>
+                <condition id="0" name="On ended" sid="726180760823481" type="Audio">
+                    <param id="0" name="Tag">&quot;1&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Play (by name)" sid="418936658326820" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;2&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="300113082765972" type="RuleReminderText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="707928955172321" type="System">
+                    <param id="0" name="Variable">music_track</param>
+                    <param id="1" name="Value">round(random(1,31))</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="171787303370064" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="643860577998879">
+            <conditions>
+                <condition id="0" name="On ended" sid="178327801230571" type="Audio">
+                    <param id="0" name="Tag">&quot;2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Play (by name)" sid="179706563114097" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;3&quot;</param>
+                </action>
+                <action id="1" name="Append text" sid="434817735983400" type="Score">
+                    <param id="0" name="Text">total_score</param>
+                </action>
+                <action id="-15" name="Set visible" sid="325938790441964" type="Score">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="322365828025248" type="System">
+                    <param id="0" name="Variable">music_track</param>
+                    <param id="1" name="Value">round(random(1,31))</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="299127445856468" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="549280635058661">
+            <conditions>
+                <condition id="0" name="On ended" sid="938228604559239" type="Audio">
+                    <param id="0" name="Tag">&quot;3&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Play (by name)" sid="523996793644357" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;4&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="295850007244425" type="System">
+                    <param id="0" name="Variable">music_track</param>
+                    <param id="1" name="Value">round(random(1,31))</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="405851282769611" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="541722396133789">
+            <conditions>
+                <condition id="0" name="On ended" sid="676295357501621" type="Audio">
+                    <param id="0" name="Tag">&quot;4&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="843532988300727" type="System">
+                    <param id="0" name="Layout">Introduction</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

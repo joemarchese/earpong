@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Introduction</name>
+    <events>
+        <variable comment="denotes a music track for preloading" constant="0" name="music_track" sid="502478550759574" static="0" type="number">0</variable>
+        <event-block sid="501508187332569">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="103029442242777" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="424695071862503" type="System">
+                    <param id="0" name="Variable">music_track</param>
+                    <param id="1" name="Value">round(random(1,31))</param>
+                </action>
+                <action id="9" name="Preload (by name)" sid="827509040074172" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                </action>
+                <action id="-16" name="Wait" sid="397934107999078" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="196209246069069" type="Audio">
+                    <param id="0" name="Folder">1</param>
+                    <param id="1" name="Audio file name">str(music_track)</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="917868347485996" type="LevelReport">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="554711382270933" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="250073188033699" type="RuleReminderText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="772805872331525">
+            <conditions>
+                <condition id="0" name="On ended" sid="997351640811062" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-43" name="Go to next/previous layout" sid="672696871490672" type="System">
+                    <param id="0" name="Which">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Level 5 Events</name>
+    <events>
+        <include>Base Game Event Sheet</include>
+        <include>Triad Events</include>
+        <event-block sid="526486817161809">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="825063872980700" type="Notehead">
+                    <param id="0" name="Object">Computer</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="385638081203253">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="914640808145682" type="System">
+                            <param id="0" name="First value">random(1)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">0.5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="844618632683061" type="System">
+                            <param id="0" name="Variable">root</param>
+                            <param id="1" name="Value">round(random(36,48))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="555206825898686" type="System">
+                            <param id="0" name="Variable">third</param>
+                            <param id="1" name="Value">root + round(random(3, 4))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="393353690710101" type="System">
+                            <param id="0" name="Variable">fifth</param>
+                            <param id="1" name="Value">root + round(random(6,8))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="268704525118627">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="602250572511313" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="909552205820402" type="System">
+                            <param id="0" name="Variable">root</param>
+                            <param id="1" name="Value">round(random(36,48))</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="188840712818848" type="System">
+                            <param id="0" name="Variable">third</param>
+                            <param id="1" name="Value">root + 4</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="403203331490254" type="System">
+                            <param id="0" name="Variable">fifth</param>
+                            <param id="1" name="Value">root + 8</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="259217787427258">
+                    <conditions />
+                    <actions>
+                        <action id="7" name="Play (by name)" sid="949253300964473" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">str(root)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="877493717124141" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">str(third)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="378965905744704" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">str(fifth)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="737239661905423">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="595720476312872" type="Notehead">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="683546768596625" type="System">
+                    <param id="0" name="First value">third - root</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">4</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="338858591870650" type="System">
+                    <param id="0" name="First value">fifth - 8</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">root</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="488742982693215" type="System">
+                    <param id="0" name="Variable">round_score</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+                <action id="0" name="Set text" sid="860906414586613" type="Score">
+                    <param id="0" name="Text">&quot;Score: &quot;&amp;round_score</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="389712031914539" type="Player">
+                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                    <param id="1" name="Parameter index">1</param>
+                    <param id="2" name="Value">70</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="148792679111218">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="437691466146787" type="Notehead">
+                    <param id="0" name="Object">PlayerBarrier</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="673619272451613">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="940665862484640" type="System">
+                            <param id="0" name="First value">third - root</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">4</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="111324857123120" type="System">
+                            <param id="0" name="First value">fifth - root</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="118901876053934" type="System">
+                            <param id="0" name="Variable">round_score</param>
+                            <param id="1" name="Value">25</param>
+                        </action>
+                        <action id="0" name="Set text" sid="105453682627982" type="Score">
+                            <param id="0" name="Text">&quot;Score: &quot;&amp;round_score</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="995951113619757" type="PlayerBarrier">
+                            <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                            <param id="1" name="Parameter index">1</param>
+                            <param id="2" name="Value">70</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
